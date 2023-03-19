@@ -1,6 +1,6 @@
-package com.sudhir.railway.POJO;
+package com.sudhir.railway.pojo;
 
-public class FromDetails{
+public class BoardingPointDetails{
 	 public String category;
 	 public String division;
 	 public String latitude;
@@ -8,4 +8,4 @@ public class FromDetails{
 	 public String state;
 	 public String stationCode;
 	 public String stationName;
-	}
+}

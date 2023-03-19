@@ -1,4 +1,4 @@
-package com.sudhir.railway.POJO;
+package com.sudhir.railway.pojo;
 	
 public class PassengerStatus{
 	 public Object Pnr;

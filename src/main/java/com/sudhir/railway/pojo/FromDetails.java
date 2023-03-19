@@ -1,6 +1,6 @@
-package com.sudhir.railway.POJO;
+package com.sudhir.railway.pojo;
 
-public class ToDetails{
+public class FromDetails{
 	 public String category;
 	 public String division;
 	 public String latitude;
@@ -8,4 +8,4 @@ public class ToDetails{
 	 public String state;
 	 public String stationCode;
 	 public String stationName;
-}
+	}

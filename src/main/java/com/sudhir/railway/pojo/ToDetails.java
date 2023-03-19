@@ -1,6 +1,6 @@
-package com.sudhir.railway.POJO;
+package com.sudhir.railway.pojo;
 
-public class ReservationUptoDetails{
+public class ToDetails{
 	 public String category;
 	 public String division;
 	 public String latitude;
