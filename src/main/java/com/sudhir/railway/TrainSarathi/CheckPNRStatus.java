@@ -27,8 +27,8 @@ public class CheckPNRStatus extends HttpServlet {
 
 		String baseURLString = "https://irctc1.p.rapidapi.com/api/v3/getPNRStatus?pnrNumber=";
 
-		// String urlString = baseURLString+pnrNumber;
-		String urlString = "https://869849af-dec5-46c9-bcd3-c36e5b08cc0e.mock.pstmn.io/getPNRStatus";
+		 String urlString = baseURLString+pnrNumber;
+		//String urlString = "https://869849af-dec5-46c9-bcd3-c36e5b08cc0e.mock.pstmn.io/getPNRStatus";
 
 		HttpRequest request = HttpRequest.newBuilder().uri(URI.create(urlString))
 				.header("X-RapidAPI-Key", "84ec970e55msh29237cd1c10520dp1cc193jsn773b967a76d6")
@@ -49,8 +49,14 @@ public class CheckPNRStatus extends HttpServlet {
 
 		ObjectMapper objectMapper = new ObjectMapper();
 		PNRStatusResponse pnrResponse = objectMapper.readValue(jsonString, PNRStatusResponse.class);
-
-		out.println("Status: " + pnrResponse.status);
+		
+		if (!pnrResponse.status) {
+			//log
+			System.out.println("CheckPNRStatus:doPost, "+pnrResponse.message);
+			out.println("There is Something wrong. We are working to fix it. Please try later. We are really sorry for the inconvenience.");
+			return;
+		}
+		
 		out.println("Message: " + pnrResponse.message);
 		out.println("Arrival Time: " + pnrResponse.pnrDetails.arrivalTime);
 		out.println("Coach Position: " + pnrResponse.pnrDetails.coachPosition);
@@ -61,7 +67,5 @@ public class CheckPNRStatus extends HttpServlet {
 			out.println("Berth: " + passenger.berth);
 			out.println("Coach: " + passenger.coach);
 		})) ;
-		
-		
 	}
 }
