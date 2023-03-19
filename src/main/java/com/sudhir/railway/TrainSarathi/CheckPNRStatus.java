@@ -6,9 +6,11 @@ import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
+import java.util.HashMap;
 import java.util.Map;
 
-import org.apache.tomcat.util.json.JSONParser;
+import org.json.simple.JSONObject;
+import org.json.simple.JSONValue;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -23,10 +25,15 @@ public class CheckPNRStatus extends HttpServlet {
 	public void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 		res.setContentType("text/html");
 		PrintWriter out=res.getWriter();
-		String pnrstatus=req.getParameter("pnr");
+		String pnrNumber=req.getParameter("pnr");
+		
+		String baseURLString = "https://irctc1.p.rapidapi.com/api/v3/getPNRStatus?pnrNumber=";
 
+		//String urlString = baseURLString+pnrNumber;
+		String urlString = "https://869849af-dec5-46c9-bcd3-c36e5b08cc0e.mock.pstmn.io/getPNRStatus";
+		
 		HttpRequest request = HttpRequest.newBuilder()
-				.uri(URI.create("https://irctc1.p.rapidapi.com/api/v3/getPNRStatus?pnrNumber="+pnrstatus))
+				.uri(URI.create(urlString))
 				.header("X-RapidAPI-Key", "84ec970e55msh29237cd1c10520dp1cc193jsn773b967a76d6")
 				.header("X-RapidAPI-Host", "irctc1.p.rapidapi.com")
 				.method("GET", HttpRequest.BodyPublishers.noBody())
@@ -45,12 +52,15 @@ public class CheckPNRStatus extends HttpServlet {
 
 		String jsonString = response.body();
 
-		Object object = new JSONParser(jsonString);
+		Object obj=JSONValue.parse(jsonString);  
+		
+	    JSONObject jsonObject = (JSONObject) obj;  
 
 		@SuppressWarnings("unchecked")
-		Map<String,Object> map = (Map<String, Object>)object;
+		
+		Map<String,Object> map = (HashMap)jsonObject;
 
-		out.print("Status: "+map.get("status"));
-		out.print("Message: "+map.get("message"));
+		out.println("Status: "+map.get("status"));
+		out.println("Message: "+map.get("message"));
 	}
 }
