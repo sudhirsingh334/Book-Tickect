@@ -1,8 +1,19 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
 <html>
+<head>
+<meta charset="UTF-8">
+<title>Welcome to Indain Railway Passenger Reservation</title>
+</head>
 <body>
-    <h2>Jersey RESTful Web Application!</h2>
-    <p><a href="webapi/myresource">Jersey resource</a>
-    <p>Visit <a href="http://jersey.java.net">Project Jersey website</a>
-    for more information on Jersey!
+<form action="checkURL"method="POST">
+<h1>Passenger Current Status Enquiry::</h1>
+<p1>Enter the PNR for your booking below to get the current status. You will 
+find it on the top left corner of the ticket.</p1><br></br>
+Enter PNR No.<input type="text"name="pnr"placeholder="Enter PNR Number"><br></br>
+<input type="submit"value="Submit">
+<input type="reset"value="Cancel">
+</form>
 </body>
 </html>
