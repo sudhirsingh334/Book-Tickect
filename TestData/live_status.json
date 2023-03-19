@@ -1,0 +1,28 @@
+{
+  "status": true,
+  "message": "Success",
+  "timestamp": 1679235710166,
+  "data": {
+    "user_id": 0,
+    "train_start_date": "2023-03-18",
+    "train_number": "15054",
+    "train_name": "LUCKNOW - CHHAPRA Express",
+    "title": "Train Run Complete",
+    "success": true,
+    "std": "2023-03-18 21:00",
+    "spent_time": 0.143,
+    "source": "LJN",
+    "seo_train_name": "Ljn Cpr Express",
+    "run_days": "MON,TUE,WED,THU,FRI,SAT,SUN",
+    "notification_date": "2023-03-19",
+    "new_message": "Train has reached destination. CHHAPRA(CPR) at 11:34",
+    "journey_time": 860,
+    "is_run_day": true,
+    "ir_train_name": "LUCKNOW - CHHAPRA Express",
+    "destination": "CPR",
+    "at_src_dstn": true,
+    "at_src": false,
+    "at_dstn": true,
+    "upcoming_stations": []
+  }
+}
