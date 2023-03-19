@@ -34,12 +34,6 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
-            <dependency>
-    			<groupId>com.googlecode.json-simple</groupId>
-    			<artifactId>json-simple</artifactId>
-    			<version>1.1.1</version>
-			</dependency>
-
         </dependencies>
     </dependencyManagement>
 
@@ -54,6 +48,12 @@
             <groupId>org.glassfish.jersey.inject</groupId>
             <artifactId>jersey-hk2</artifactId>
         </dependency>
+        
+           <dependency>
+    			<groupId>com.googlecode.json-simple</groupId>
+    			<artifactId>json-simple</artifactId>
+    			<version>1.1.1</version>
+			</dependency>
         <!-- uncomment this to get JSON support
         <dependency>
             <groupId>org.glassfish.jersey.media</groupId>
