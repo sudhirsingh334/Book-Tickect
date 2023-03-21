@@ -25,5 +25,8 @@ find it on the top left corner of the ticket.</p1><br></br>
 <input type="reset"value="Cancel">
 </div>
 </form>
+<form action="EmployeeURL"method="post">
+<input type="submit"value="Show Employee Details">
+</form>
 </body>
 </html>

@@ -35,4 +35,14 @@
     <servlet-name>TrainRunningStatus</servlet-name>
     <url-pattern>/TrainRunningStatus</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>EmployeeDetails</display-name>
+    <servlet-name>EmployeeDetails</servlet-name>
+    <servlet-class>com.employee.details.EmployeeDetails</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>EmployeeDetails</servlet-name>
+    <url-pattern>/EmployeeDetails</url-pattern>
+  </servlet-mapping>
 </web-app>
