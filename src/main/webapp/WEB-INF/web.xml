@@ -25,4 +25,14 @@
     <servlet-name>CheckPNRStatus</servlet-name>
     <url-pattern>/CheckPNRStatus</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>TrainRunningStatus</display-name>
+    <servlet-name>TrainRunningStatus</servlet-name>
+    <servlet-class>com.trainrunnungstatus.Trainsarathi.TrainRunningStatus</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>TrainRunningStatus</servlet-name>
+    <url-pattern>/TrainRunningStatus</url-pattern>
+  </servlet-mapping>
 </web-app>

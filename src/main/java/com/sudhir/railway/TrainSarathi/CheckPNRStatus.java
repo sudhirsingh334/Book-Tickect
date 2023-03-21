@@ -58,15 +58,15 @@ public class CheckPNRStatus extends HttpServlet {
 			return;
 		}
 		
-		Timestamp ts=new Timestamp(System.currentTimeMillis());  
-        Date date=new Date(ts.getTime());  
+		Timestamp ts = new Timestamp(System.currentTimeMillis());  
+        Date date = new Date(ts.getTime());  
         
         out.print("<br>");
 		out.println(date);
 		out.print("<br><br>");
 		
 		
-		out.println("<table border='1'> <tr> <th>Train Number</th> <th>Train Name</th> <th>Boarding Date <br>"
+		out.println("<html><body><table border=''border-collapse:'collapse'bgcolor:'green';> <tr> <th>Train Number</th> <th>Train Name</th> <th>Boarding Date <br>"
 				+ "(DD-MM-YYYY)</th><th>From</th><th>Reserved Upto</th><th>Boarding Point</th><th>Class</th></tr> ");
 		  
 		out.print("<tr>");
@@ -79,7 +79,7 @@ public class CheckPNRStatus extends HttpServlet {
 		out.print("<td>"+ pnrResponse.pnrDetails.boardingPoint +"</td>");
 		out.print("<td>"+ pnrResponse.pnrDetails.bookedClass +"</td>");
 		out.print("</tr>");
-		out.print("</table>");
+		out.print("</table></body></html>");
 
 		out.print("<table border='1'> <tr> <th>S.No.</th> <th>Booking Status (Coach No , Berth No., Quota)</th> <th>*Current Status (Coach No , Berth No.)</th><th>Coach Position</th><br></tr>");
 		
@@ -101,6 +101,29 @@ public class CheckPNRStatus extends HttpServlet {
 		out.print("<td>"+ (pnrResponse.pnrDetails.chartPrepared ? "Chart Prepared":"Chart Not Prepared") +"</td>");		
 		out.print("<td> </td>");		
 		out.print("<td>"+ pnrResponse.pnrDetails.trainStatus +"</td>");				
-		out.print("</table>");
+		out.print("</table><br></br>");
+		
+		
+		
+		
+		out.print("<a href='TrainScheduleStatus.jsp'>");
+
+		out.print("<button class='block'><b>Train Schedule Status</b></button>\n");
+
+		out.print("</a>");
+
+
+		
+		   
+
+		    
+		    
+		    
+
+		
+				
 	}
+	
+	
+	
 }
